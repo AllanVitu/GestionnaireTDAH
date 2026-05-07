@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100" height="100" rx="24" fill="url(#bg)"/>
+
+  <!-- Brain outline - left hemisphere -->
+  <path d="M50,24 C50,24 38,22 31,30 C24,38 25,50 31,57 C27,62 25,70 29,76 C33,82 41,84 47,80 L50,82"
+        fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.88)" stroke-width="3.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brain outline - right hemisphere -->
+  <path d="M50,24 C50,24 62,22 69,30 C76,38 75,50 69,57 C73,62 75,70 71,76 C67,82 59,84 53,80 L50,82"
+        fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.88)" stroke-width="3.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Center sulcus -->
+  <line x1="50" y1="26" x2="50" y2="80" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- Left gyri -->
+  <path d="M29,45 C34,41 38,46 35,52" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M27,60 C32,57 35,62 32,67" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right gyri -->
+  <path d="M71,45 C66,41 62,46 65,52" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M73,60 C68,57 65,62 68,67" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Lightning bolt (golden, center) -->
+  <polygon points="55,18 43,47 53,47 46,82 57,53 47,53"
+           fill="#fbbf24" filter="url(#glow)"/>
+</svg>

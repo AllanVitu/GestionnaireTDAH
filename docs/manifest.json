@@ -1,0 +1,16 @@
+{
+  "name": "FocusBrain — Gestionnaire TDAH",
+  "short_name": "FocusBrain",
+  "description": "Gestionnaire de tâches conçu pour les cerveaux TDAH",
+  "start_url": "/GestionnaireTDAH/",
+  "scope": "/GestionnaireTDAH/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f9fafb",
+  "theme_color": "#a855f7",
+  "icons": [
+    { "src": "logo-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["productivity", "lifestyle"],
+  "lang": "fr"
+}

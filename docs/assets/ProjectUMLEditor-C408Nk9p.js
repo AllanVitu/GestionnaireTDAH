@@ -1,0 +1,30 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/mermaid.core-DiPftlmU.js","assets/index-BT0VAtdY.js","assets/index-BsWT6s8H.css"])))=>i.map(i=>d[i]);
+import{L as P,K as x,_ as V,a as d,c as i,e as t,b as F,w as N,G as U,g as v,v as T,t as y,F as z,r as K,f as B,l as O,J as Y,M as C,k as E,j as s,D as q,H as G}from"./index-BT0VAtdY.js";import{u as H}from"./projectDocs-BHE6-nFE.js";const $={class:"space-y-3 animate-fade-in"},J={class:"flex items-center gap-3 flex-wrap bg-white dark:bg-[#012040] rounded-2xl border border-gray-100 dark:border-gray-700 px-4 py-2.5"},Q={key:0,class:"text-xs text-red-500 font-medium"},W={key:1,class:"text-xs text-gray-400 dark:text-gray-500"},X={class:"relative",ref:"snippetMenu"},Z={key:0,class:"absolute right-0 top-full mt-1 w-48 bg-white dark:bg-[#012040] rounded-xl border border-gray-200 dark:border-gray-600 shadow-lg z-10 py-1"},ee=["onClick"],te={class:"grid md:grid-cols-2 gap-3"},ae={class:"bg-white dark:bg-[#012040] rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"},re=["onKeydown"],oe={class:"bg-white dark:bg-[#012040] rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden relative"},se={class:"absolute inset-0 flex items-center justify-center bg-white/80 dark:bg-[#012040]/80 z-10"},ne={key:0,class:"p-4 text-sm text-red-500"},le={class:"text-xs opacity-75 whitespace-pre-wrap"},M=`flowchart TD
+    A[Début] --> B{Décision}
+    B -->|Oui| C[Action A]
+    B -->|Non| D[Action B]
+    C --> E[Fin]
+    D --> E`,ce={__name:"ProjectUMLEditor",setup(de){const f=G(),h=H(),S=E(()=>f.params.id),k=E(()=>f.params.docId),u=s("Diagramme UML"),o=s(""),c=s(null),p=s(!1),n=s(""),m=s("Sauvegardé"),g=s(!1);let _=null,w=null;P(async()=>{const a=h.getItem(k.value);a?(u.value=a.title,o.value=a.content||M):o.value=M,await x(),b()});const L=()=>{clearTimeout(_),clearTimeout(w),m.value="Modification…",_=setTimeout(b,800),w=setTimeout(D,2e3)},b=async()=>{if(c.value){p.value=!0,n.value="";try{const a=(await V(async()=>{const{default:r}=await import("./mermaid.core-DiPftlmU.js").then(A=>A.bD);return{default:r}},__vite__mapDeps([0,1,2]))).default;a.initialize({startOnLoad:!1,theme:document.documentElement.classList.contains("dark")?"dark":"default",securityLevel:"loose"});const e="uml-"+Math.random().toString(36).slice(2),{svg:l}=await a.render(e,o.value);c.value&&(c.value.innerHTML=l)}catch(a){n.value=a.message??"Erreur inconnue"}finally{p.value=!1}}},D=()=>{h.updateItem(k.value,{title:u.value||"Diagramme",content:o.value}),m.value="Sauvegardé ✓"},j=a=>{const e=a.target,l=e.selectionStart,r=e.selectionEnd;o.value=o.value.substring(0,l)+"  "+o.value.substring(r),x(()=>{e.selectionStart=e.selectionEnd=l+2})},I=a=>{o.value=a.code,x(b)},R=[{label:"Flowchart",code:`flowchart TD
+    A[Début] --> B{Décision}
+    B -->|Oui| C[Résultat A]
+    B -->|Non| D[Résultat B]`},{label:"Séquence",code:`sequenceDiagram
+    Alice->>Bob: Bonjour Bob
+    Bob-->>Alice: Salut Alice
+    Alice->>Bob: Comment ça va ?`},{label:"Classe",code:`classDiagram
+    class Animal {
+        +String nom
+        +manger()
+    }
+    class Chien {
+        +aboyer()
+    }
+    Animal <|-- Chien`},{label:"Gantt",code:`gantt
+    title Planning
+    dateFormat  YYYY-MM-DD
+    section Phase 1
+    Tâche A :a1, 2024-01-01, 7d
+    Tâche B :a2, after a1, 5d`},{label:"Pie",code:`pie title Répartition
+    "Travail" : 40
+    "Loisirs" : 30
+    "Sport" : 20
+    "Autre" : 10`}];return(a,e)=>{const l=q("router-link");return d(),i("div",$,[t("div",J,[F(l,{to:{name:"project-docs",params:{id:S.value},query:{type:"uml"}},class:"text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 font-medium"},{default:N(()=>[...e[3]||(e[3]=[U("← UML",-1)])]),_:1},8,["to"]),v(t("input",{"onUpdate:modelValue":e[0]||(e[0]=r=>u.value=r),onBlur:D,class:"flex-1 min-w-[120px] font-bold text-gray-800 dark:text-white bg-transparent border-b border-transparent focus:border-brand-400 outline-none text-sm px-1",placeholder:"Titre du diagramme…"},null,544),[[T,u.value]]),n.value?(d(),i("span",Q,"⚠ Erreur Mermaid")):(d(),i("span",W,y(m.value),1)),t("div",X,[t("button",{onClick:e[1]||(e[1]=r=>g.value=!g.value),class:"px-3 py-1.5 bg-surface-100 dark:bg-brand-900/20 text-brand-700 dark:text-brand-400 rounded-lg text-xs font-bold hover:bg-surface-100 transition-colors"}," Exemples ▾ "),g.value?(d(),i("div",Z,[(d(),i(z,null,K(R,r=>t("button",{key:r.label,onClick:A=>{I(r),g.value=!1},class:"w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"},y(r.label),9,ee)),64))])):B("",!0)],512),t("button",{onClick:b,class:"px-4 py-1.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg text-xs font-bold hover:opacity-90 transition-opacity shadow-sm"}," ▶ Rendu ")]),t("div",te,[t("div",ae,[e[4]||(e[4]=t("div",{class:"px-4 py-2 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50"},[t("span",{class:"text-xs font-semibold text-gray-500 dark:text-gray-400"},"Code Mermaid")],-1)),v(t("textarea",{"onUpdate:modelValue":e[2]||(e[2]=r=>o.value=r),onInput:L,onKeydown:O(Y(j,["prevent"]),["tab"]),spellcheck:"false",class:"w-full h-64 md:h-[60vh] p-4 font-mono text-xs text-gray-800 dark:text-gray-100 bg-transparent resize-none focus:outline-none"},null,40,re),[[T,o.value]])]),t("div",oe,[e[7]||(e[7]=t("div",{class:"px-4 py-2 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50"},[t("span",{class:"text-xs font-semibold text-gray-500 dark:text-gray-400"},"Aperçu")],-1)),v(t("div",se,[...e[5]||(e[5]=[t("div",{class:"w-8 h-8 border-4 border-brand-500 border-t-transparent rounded-full animate-spin"},null,-1)])],512),[[C,p.value]]),n.value?(d(),i("div",ne,[e[6]||(e[6]=t("p",{class:"font-bold mb-1"},"Erreur de syntaxe :",-1)),t("pre",le,y(n.value),1)])):B("",!0),v(t("div",{ref_key:"previewEl",ref:c,class:"h-64 md:h-[60vh] flex items-center justify-center p-4 overflow-auto"},null,512),[[C,!n.value]])])])])}}};export{ce as default};
